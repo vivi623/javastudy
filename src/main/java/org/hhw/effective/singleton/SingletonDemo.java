@@ -1,4 +1,4 @@
-package org.hhw.effective;
+package org.hhw.effective.singleton;
 
 /**
  * 单例模式，注意java反射可以破坏单例
@@ -25,7 +25,7 @@ public class SingletonDemo {
 
         // 可以通过动态创建实例，创建多个实例
         try {
-            Class clz= Class.forName("org.hhw.effective.SingletonDemo");
+            Class clz= Class.forName("org.hhw.effective.singleton.SingletonDemo");
             SingletonDemo demo3 = (SingletonDemo)clz.newInstance();
             System.out.println(demo1==demo3);
         } catch (ClassNotFoundException e) {

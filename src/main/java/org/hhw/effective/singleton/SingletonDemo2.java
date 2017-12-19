@@ -1,4 +1,4 @@
-package org.hhw.effective;
+package org.hhw.effective.singleton;
 
 import java.io.*;
 
