@@ -1,4 +1,4 @@
-package org.hhw.effective.builder;
+package org.hhw.base;
 
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ public class BigIntegerDemo {
         // print bi value
         System.out.println( str );
 
-        Map<String,String> map = new HashMap<>();
+        System.out.println(value.toString());
 
     }
 }

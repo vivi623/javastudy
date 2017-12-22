@@ -9,7 +9,7 @@ public class SingletonDemo {
     private SingletonDemo() {
         //可以通过加强验证避免反射创建实例
         if(singleton != null) {
-            throw new RuntimeException("instance error");
+            throw new AssertionError("instance error");
         }
     }
 
