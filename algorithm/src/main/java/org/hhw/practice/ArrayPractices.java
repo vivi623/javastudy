@@ -1,21 +1,8 @@
 package org.hhw.practice;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class ArrayPractices {
-    public static void main(String[] args) {
-        int[] nums = {3,2,4};
-//        int len = removeDuplicates(nums);
-        int[] rtn = twoSum(nums, 6);
-        for(int i = 0; i < rtn.length; i++) {
-            System.out.println(rtn[i]);
-        }
-        System.out.println();
-
-
-    }
-
     /**
      *  Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length.
      *  Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
@@ -26,7 +13,7 @@ public class ArrayPractices {
      * @param nums
      * @return
      */
-    public static int removeDuplicates(int[] nums) {
+    public int removeDuplicates(int[] nums) {
         int len = nums.length;
         if(len <= 1) {
             return len;
@@ -48,7 +35,7 @@ public class ArrayPractices {
      * @param nums
      * @param k
      */
-    public  static void rotate1(int[] nums, int k) {
+    public void rotate1(int[] nums, int k) {
         k %= nums.length;
         reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k - 1);
@@ -72,7 +59,7 @@ public class ArrayPractices {
         }
     }
 
-    private static void reverse(int[] nums, int start, int end) {
+    private void reverse(int[] nums, int start, int end) {
         while (start < end) {
             int temp = nums[start];
             nums[start] = nums[end];
@@ -88,7 +75,7 @@ public class ArrayPractices {
      * @param nums
      * @return
      */
-    public static boolean containsDuplicate1(int[] nums) {
+    public boolean containsDuplicate1(int[] nums) {
         int length = nums.length;
         Set<Integer> set = new HashSet<Integer>();
         for(int i = 0; i < length; i++) {
@@ -106,7 +93,7 @@ public class ArrayPractices {
      * @param nums
      * @return
      */
-    public static int singleNumber1(int[] nums) {
+    public int singleNumber1(int[] nums) {
         if (nums.length == 0) {
             return Integer.MIN_VALUE;
         }
@@ -117,7 +104,7 @@ public class ArrayPractices {
         return res;
     }
 
-    public static int singleNumber2(int[] nums) {
+    public int singleNumber2(int[] nums) {
         int len = nums.length;
         if(len == 0) {
             return Integer.MIN_VALUE;
@@ -175,7 +162,7 @@ public class ArrayPractices {
         return Arrays.copyOf(ans, k);
     }
 
-    public static int[] intersect2(int[] nums1, int[] nums2) {
+    public int[] intersect2(int[] nums1, int[] nums2) {
 
         if(nums1.length == 0 || nums2.length == 0) {
             return new int[0];
@@ -215,7 +202,7 @@ public class ArrayPractices {
         return caseIntegerToInt(nums);
     }
 
-    private static List<Integer> caseIntsToList(int[] nums) {
+    private List<Integer> caseIntsToList(int[] nums) {
         List<Integer> list = new ArrayList<>();
         for(int i = 0; i <nums.length; i++) {
             list.add(nums[i]);
@@ -223,7 +210,7 @@ public class ArrayPractices {
         return list;
     }
 
-    private static int[] caseIntegerToInt(Integer[] nums) {
+    private int[] caseIntegerToInt(Integer[] nums) {
         int[] rtns = new int[nums.length];
         for(int i = 0; i < nums.length; i ++) {
             rtns[i] = nums[i];
@@ -238,7 +225,7 @@ public class ArrayPractices {
      * @param digits
      * @return
      */
-    public static int[] plusOne(int[] digits) {
+    public int[] plusOne(int[] digits) {
 
         int n = digits.length;
         for(int i=n-1; i>=0; i--) {
@@ -260,7 +247,7 @@ public class ArrayPractices {
      * 把数组中的0移动到最后，并不改变非0数据的顺序
      * @param nums
      */
-    public static void moveZeroes(int[] nums) {
+    public void moveZeroes(int[] nums) {
 
         int count = 0;
         int length = nums.length;
@@ -289,7 +276,7 @@ public class ArrayPractices {
      * @param target
      * @return
      */
-    public static int[] twoSum(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         for(int i = 0; i < nums.length; i++) {
@@ -303,7 +290,6 @@ public class ArrayPractices {
         }
 
         return null;
-
     }
 
 }
