@@ -5,11 +5,11 @@ import java.util.*;
 
 public class ArrayPractices {
     public static void main(String[] args) {
-        int[] nums = {1,0,8,9};
+        int[] nums = {3,2,4};
 //        int len = removeDuplicates(nums);
-        int[] temp = plusOne(nums);
-        for(int i = 0; i < temp.length; i++) {
-            System.out.println(temp[i]);
+        int[] rtn = twoSum(nums, 6);
+        for(int i = 0; i < rtn.length; i++) {
+            System.out.println(rtn[i]);
         }
         System.out.println();
 
@@ -254,6 +254,56 @@ public class ArrayPractices {
         newNumber[0] = 1;
 
         return newNumber;
+    }
+
+    /**
+     * 把数组中的0移动到最后，并不改变非0数据的顺序
+     * @param nums
+     */
+    public static void moveZeroes(int[] nums) {
+
+        int count = 0;
+        int length = nums.length;
+        for(int i = 0; i < length; i++) {
+            int tmp = nums[i];
+            if(tmp == 0) {
+                count++;
+                continue;
+            }
+
+            if(count > 0) {
+                nums[i-count] = tmp;
+            }
+
+        }
+
+        for(int i = 0; i < count; i++) {
+            nums[length-1-i] = 0;
+        }
+
+    }
+
+    /**
+     * 给定数组，取出两个数相加等于target的位置，默认一个数组中只能有一个组合相加等于target
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for(int i = 0; i < nums.length; i++) {
+
+            if(map.containsKey(target-nums[i])) {
+                return new int[]{map.get(target-nums[i]), i};
+            } else {
+                map.put(nums[i], i);
+            }
+
+        }
+
+        return null;
+
     }
 
 }
