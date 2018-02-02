@@ -8,7 +8,6 @@ import java.util.UUID;
 
 public class RedisLock {
 
-
     public String getLock(String key, int timeout) {
         try {
             Jedis jedis = RedisManager.getJedis();
