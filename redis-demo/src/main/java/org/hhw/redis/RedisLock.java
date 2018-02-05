@@ -6,6 +6,9 @@ import redis.clients.jedis.Transaction;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * 分布式锁
+ */
 public class RedisLock {
 
     public String getLock(String key, int timeout) {
@@ -15,8 +18,14 @@ public class RedisLock {
             long end = System.currentTimeMillis()+timeout;
             while (System.currentTimeMillis() < end) {
                 if(jedis.setnx(key, uuid) == 1) {
+                    jedis.expire(key, timeout/1000);
                     return uuid;
                 }
+
+                if (jedis.ttl(key) == -1) {
+                    jedis.expire(key, timeout);
+                }
+
                 Thread.sleep(500);
             }
 
@@ -54,14 +63,14 @@ public class RedisLock {
     public static void main(String[] args) {
         RedisLock redisLock = new RedisLock();
         String key = "lock:demo1";
-        String lockid = redisLock.getLock("lock:demo1", 2000);
+        String lockid = redisLock.getLock(key, 2000);
         if(lockid != null) {
             System.out.println("获取锁成功");
         } else {
             System.out.println("失败");
         }
 
-        String lockid2 = redisLock.getLock("lock:demo1", 2000);
+        String lockid2 = redisLock.getLock(key, 2000);
         if(lockid2 != null) {
             System.out.println("获取锁成功");
         } else {

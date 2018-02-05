@@ -4,6 +4,9 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+ * 分布式锁
+ */
 public class RedisManager {
     private static JedisPool jedisPool;
     private static String HOST = "192.168.174.130";
