@@ -14,7 +14,7 @@ public class RedisManager {
 
     static {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxTotal(20);
+        jedisPoolConfig.setMaxTotal(50);
         jedisPoolConfig.setMaxIdle(10);
         jedisPool = new JedisPool(jedisPoolConfig, HOST, PORT);
     }
