@@ -3,11 +3,14 @@ package org.hhw.io.bio;
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.concurrent.Future;
 
 public class BioClient {
     public static void main(String[] args) {
         try {
             Socket s = new Socket("127.0.0.1",9999);
+            Thread.sleep(5000);
+
 
             //构建IO
             OutputStream os = s.getOutputStream();
@@ -20,10 +23,12 @@ public class BioClient {
             InputStream is = s.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String mess = br.readLine();
-            System.out.println("服务器："+mess);
+            System.out.println("客户端：收到服务器返回，"+mess);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
