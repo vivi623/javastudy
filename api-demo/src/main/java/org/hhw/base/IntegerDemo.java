@@ -4,6 +4,10 @@ import java.lang.reflect.Field;
 
 public class IntegerDemo {
     public static void main(String[] args) {
+        int a = -1;
+        System.out.println(Long.valueOf(-a));
+        System.out.println(Long.valueOf(-a));
+
         int i = 16;
         System.out.println("Number = " + i);
 

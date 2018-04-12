@@ -1,4 +1,4 @@
-package org.hhw.pattern.factorypattern.factory;
+package org.hhw.pattern.factory.factory;
 
 /**
  * Created by houhongwei on 2018/3/6.

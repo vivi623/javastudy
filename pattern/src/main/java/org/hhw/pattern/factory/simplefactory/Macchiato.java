@@ -1,4 +1,4 @@
-package org.hhw.pattern.factorypattern.simplefactory;
+package org.hhw.pattern.factory.simplefactory;
 
 /**
  * 玛奇朵

@@ -292,4 +292,55 @@ public class ArrayPractices {
         return null;
     }
 
+
+    public static List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> list = new ArrayList<>();
+        if(nums.length < 3) {
+            return list;
+        }
+
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length; i++) {
+
+            if(nums[i] > 0) {
+                break;
+            }
+
+            int start = i +1;
+            int end = nums.length -1;
+            while(start < end) {
+                if(nums[end] < 0) {
+                    break;
+                }
+                int sum = nums[i] + nums[start] + nums[end];
+                if(sum > 0) {
+                    end--;
+                } else if(sum < 0) {
+                    start++;
+                } else {
+                    List<Integer> oneResult = new ArrayList<Integer>();
+                    oneResult.add(nums[i]);
+                    oneResult.add(nums[start]);
+                    oneResult.add(nums[end]);
+
+                    if(!list.contains(oneResult)) {
+                        list.add(oneResult);
+                    }
+                    start++;
+                    end--;
+                }
+            }
+
+        }
+        return list;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {-1, 0, 1, 2, -1, -4};
+        List<List<Integer>> list = threeSum(a);
+        for(List<Integer> nums : list) {
+            System.out.println(nums.toString());;
+        }
+    }
+
 }

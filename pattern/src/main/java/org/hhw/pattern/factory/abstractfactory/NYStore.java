@@ -1,8 +1,8 @@
-package org.hhw.pattern.factorypattern.abstractfactory;
+package org.hhw.pattern.factory.abstractfactory;
 
-import org.hhw.pattern.factorypattern.factory.PicMacchiato;
-import org.hhw.pattern.factorypattern.factory.PicMocha;
-import org.hhw.pattern.factorypattern.simplefactory.Coffee;
+import org.hhw.pattern.factory.factory.PicMacchiato;
+import org.hhw.pattern.factory.factory.PicMocha;
+import org.hhw.pattern.factory.simplefactory.Coffee;
 
 /**
  * Created by houhongwei on 2018/3/20.

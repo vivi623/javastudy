@@ -33,9 +33,9 @@ public class XorDemo {
 
     static int hash(Object k) {
         int h = 0;
-        if (0 != h && k instanceof String) {
-            return sun.misc.Hashing.stringHash32((String) k);
-        }
+//        if (0 != h && k instanceof String) {
+//            return sun.misc.Hashing.stringHash32((String) k);
+//        }
 
         h ^= k.hashCode();
 

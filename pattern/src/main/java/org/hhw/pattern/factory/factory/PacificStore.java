@@ -1,8 +1,6 @@
-package org.hhw.pattern.factorypattern.factory;
+package org.hhw.pattern.factory.factory;
 
-import org.hhw.pattern.factorypattern.simplefactory.Coffee;
-import org.hhw.pattern.factorypattern.simplefactory.Macchiato;
-import org.hhw.pattern.factorypattern.simplefactory.Mocha;
+import org.hhw.pattern.factory.simplefactory.Coffee;
 
 /**
  * Created by houhongwei on 2018/3/6.
