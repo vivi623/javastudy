@@ -1,0 +1,47 @@
+Compiled from "VolatileDemo.java"
+public class org.hhw.thread.VolatileDemo {
+  public org.hhw.thread.VolatileDemo();
+    Code:
+       0: aload_0       
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return        
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_3      
+       1: anewarray     #2                  // class java/lang/Integer
+       4: dup           
+       5: iconst_0      
+       6: iconst_1      
+       7: invokestatic  #3                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      10: aastore       
+      11: dup           
+      12: iconst_1      
+      13: iconst_2      
+      14: invokestatic  #3                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      17: aastore       
+      18: dup           
+      19: iconst_2      
+      20: iconst_3      
+      21: invokestatic  #3                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      24: aastore       
+      25: astore_1      
+      26: aload_1       
+      27: invokestatic  #4                  // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+      30: astore_2      
+      31: aload_2       
+      32: invokeinterface #5,  1            // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      37: astore_3      
+      38: aload_3       
+      39: invokeinterface #6,  1            // InterfaceMethod java/util/Iterator.hasNext:()Z
+      44: ifeq          69
+      47: aload_3       
+      48: invokeinterface #7,  1            // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      53: checkcast     #2                  // class java/lang/Integer
+      56: astore        4
+      58: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      61: aload         4
+      63: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+      66: goto          38
+      69: return        
+}
